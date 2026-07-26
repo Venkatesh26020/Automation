@@ -4,8 +4,7 @@ import { InvalidLogin, Loginpage } from '../Automation_Testing/pages/loginpage';
 test('Login Functionality',async ({page}) => {
     const loginpage=new Loginpage(page);
     await loginpage.goto();
-    await loginpage.login('standard_user','secret_sauce');
-    // await loginpage.invalidlogin('venkatesh','page123');
+    await loginpage.login('student','Password123');
     await page.waitForTimeout(2000);
 })
 

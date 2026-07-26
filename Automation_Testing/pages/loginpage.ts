@@ -5,12 +5,14 @@ export class Loginpage{
     readonly username:Locator;
     readonly password:Locator;
     readonly Loginbutton:Locator;
+    readonly message:Locator;
     
     constructor(page:Page){
         this.page=page;
         this.username=page.getByLabel('UserName');
         this.password=page.getByLabel('Password');
         this.Loginbutton=page.getByRole('button',{name:'Submit'});
+        this.message=page.getByText('Logged In Successfully')
     }
     async goto(){
         await this.page.goto('https://practicetestautomation.com/practice-test-login/');
@@ -19,6 +21,7 @@ export class Loginpage{
         await this.username.fill(username);
         await this.password.fill(password);
         await this.Loginbutton.click();
+        await expect(this.page.locator('//*[@id="loop-container"]/div/article/div[1]/h1')).toHaveText('Logged In Successfully')
     }
     
 }
