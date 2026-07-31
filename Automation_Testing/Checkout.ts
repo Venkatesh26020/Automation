@@ -9,7 +9,7 @@ export class Checkout{
 
     constructor(page:Page){
         this.page=page;
-        this.CheckoutButton=page.locator('#checkout')
+        this.CheckoutButton=page.locator('#checkout');
         this.FirstName=page.getByPlaceholder('First Name');
         this.LastName=page.getByPlaceholder('lastName');
         this.PostalCode=page.getByPlaceholder('Zip/Postal Code');

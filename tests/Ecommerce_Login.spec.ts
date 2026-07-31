@@ -13,6 +13,8 @@ test('Add Item', async ({ authenticatedPage }) => {
 });
 
 test('Checkout Item',async ({authenticatedPage}) => {
+    const cart=new Cart(authenticatedPage);
+    await cart.additem();
     const checkout= new Checkout(authenticatedPage)
     await checkout.CheckoutCart();
     await checkout.FillCheckout();
