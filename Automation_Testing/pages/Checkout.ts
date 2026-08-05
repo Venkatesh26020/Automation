@@ -7,6 +7,7 @@ export class Checkout{
     readonly LastName:Locator;
     readonly PostalCode:Locator;
     readonly Continue:Locator;
+    readonly Finish:Locator;
 
     constructor(page:Page){
         this.page=page;
@@ -14,7 +15,8 @@ export class Checkout{
         this.FirstName=page.getByPlaceholder('First Name');
         this.LastName=page.getByPlaceholder('Last Name');
         this.PostalCode=page.getByPlaceholder('Zip/Postal Code');
-        this.Continue=page.getByRole('button',{name:'continue'})
+        this.Continue=page.getByRole('button',{name:'continue'});
+        this.Finish=page.getByRole('button',{name:'Finish'});
     }
 
     async CheckoutCart(){
@@ -26,5 +28,6 @@ export class Checkout{
         await this.LastName.fill('S');
         await this.PostalCode.fill('600100');
         await this.Continue.click();
+        await this.Finish.click();
     }
 }

@@ -3,6 +3,7 @@ import { Cart } from '../Automation_Testing/pages/AddCart';
 import { Checkout } from '../Automation_Testing/pages/Checkout';
 
 
+
 test('Checkout Item',async ({authenticatedPage}) => {
     const cart=new Cart(authenticatedPage);
     await cart.additem();
