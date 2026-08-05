@@ -23,10 +23,10 @@ export class Checkout{
         await this.CheckoutButton.click();
     }
 
-    async FillCheckout(){
-        await this.FirstName.fill('Venkatesh');
-        await this.LastName.fill('S');
-        await this.PostalCode.fill('600100');
+    async FillCheckout(FirstName:string,LastName:string,PostalCode:string){
+        await this.FirstName.fill(FirstName);
+        await this.LastName.fill(LastName);
+        await this.PostalCode.fill(PostalCode);
         await this.Continue.click();
         await this.Finish.click();
     }
