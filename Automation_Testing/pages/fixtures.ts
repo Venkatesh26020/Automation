@@ -6,7 +6,6 @@ export const test = Base.extend<{ authenticatedPage: Page }>({
         const login=new Login(page);
         await login.goto();
         await login.login('standard_user','secret_sauce');
-        await use(page);
-        
+        await use(page);   
     }}
 )

@@ -7,7 +7,9 @@ test('login with fixture', async ({ authenticatedPage }) => {
     await authenticatedPage.waitForTimeout(2000);
 });
 
-test('Invalid Login', async({authenticatedPage})=>{    
-   const invalid=new Login(authenticatedPage);
-   await invalid.Invalidlogin('standard_user','secret')
+test('Invalid Login', async({page})=>{
+    const invalid=new Login(page)
+    await invalid.goto()
+    await invalid.Invalidlogin('standard_user','secret')
+   await page.waitForTimeout(2000);
 })

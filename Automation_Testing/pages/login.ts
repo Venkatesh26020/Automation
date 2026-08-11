@@ -27,7 +27,7 @@ export class Login{
         await this.username.fill(username);
         await this.Password.fill(password);
         await this.LoginButton.click();
-        await expect(this.page.locator('error-button')).toBeVisible();
+        await expect(this.page.locator('[data-test="error-button"]')).toBeVisible();
     }
 
 }
