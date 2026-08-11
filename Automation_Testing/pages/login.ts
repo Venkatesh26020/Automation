@@ -23,4 +23,11 @@ export class Login{
         await this.LoginButton.click();
     }
 
+    async Invalidlogin(username:string,password:string){
+        await this.username.fill(username);
+        await this.Password.fill(password);
+        await this.LoginButton.click();
+        await expect(this.page.locator('error-button')).toBeVisible();
+    }
+
 }
