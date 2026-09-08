@@ -6,3 +6,9 @@ test('Add Item', async ({ authenticatedPage }) => {
     await cart.additem();
     await authenticatedPage.waitForTimeout(2000);
 });
+
+test('CheckCartitem', async({page})=>{
+    const checkcart=new Cart(page);
+    await checkcart.checkcartitem();
+    await page.waitForTimeout(2000);
+})
