@@ -14,7 +14,6 @@ test('download action',async ({authenticatedPage}) => {
     await checkout.FillCheckout('Keerthana','S','600100');
     const Download=new download(authenticatedPage);
     const downloadedFile = await Download.download();
-
     expect(downloadedFile.suggestedFilename()).toBeTruthy();
     expect(await downloadedFile.path()).toBeTruthy();
     
