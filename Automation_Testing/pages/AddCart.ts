@@ -1,4 +1,4 @@
-import{Locator, test,Page} from '@playwright/test'
+import{Locator, test,Page,expect} from '@playwright/test'
 
 export class Cart{
     readonly page:Page;
@@ -23,7 +23,7 @@ export class Cart{
     }
 
     async checkcartitem(){
-        await this.Checkcartitem.isVisible();
+       await expect(this.Checkcartitem.isVisible());
 
     }
     async continueshopping(){

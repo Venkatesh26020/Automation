@@ -9,10 +9,8 @@ test('Checkout Item',async ({authenticatedPage}) => {
     await cart.additem();
     const checkout= new Checkout(authenticatedPage)
     await checkout.CheckoutCart();
-    await authenticatedPage.waitForTimeout(2000);
     const FirstName='Venkatesh';
     const LastName='S';
     const PostalCode='600100';
     await checkout.FillCheckout(FirstName,LastName,PostalCode);
-    await authenticatedPage.waitForTimeout(2000);
 })
