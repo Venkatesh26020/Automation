@@ -8,7 +8,7 @@ import { download } from "../Automation_Testing/downloadpage";
 test('download action',async ({authenticatedPage}) => {
     const cart=new Cart(authenticatedPage);
     await cart.additem();
-    await cart.checkcartitem();
+    // await cart.checkcartitem();
     const checkout=new Checkout(authenticatedPage);
     await checkout.CheckoutCart();
     await checkout.FillCheckout('Keerthana','S','600100');

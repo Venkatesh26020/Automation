@@ -1,4 +1,4 @@
-import{Locator, test,Page} from '@playwright/test'
+import{Locator, test,Page, expect} from '@playwright/test'
 
 export class Checkout{
     readonly page:Page;
@@ -29,5 +29,8 @@ export class Checkout{
         await this.PostalCode.fill(PostalCode);
         await this.Continue.click();
         await this.Finish.click();
+        await expect(this.page.getByText('Thank you for your order!')).toBeVisible();
+        await this.page.screenshot({fullPage:true,path:'C:\\Users\\venka\\OneDrive\\Pictures\\Screenshots\\screnshot.png'});
+
     }
 }

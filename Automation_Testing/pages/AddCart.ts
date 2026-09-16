@@ -13,19 +13,22 @@ export class Cart{
         this.page=page;
         this.Add=page.getByRole('button',{name:'Add to cart'}).first();
         this.Cartitem=page.locator('//*[@id="shopping_cart_container"]/a');
-        this.Checkcartitem=page.getByTestId('shopping-cart-badge');
         this.AddNew=page.getByRole('button',{name:'Add to cart'}).nth(1);
+        this.Checkcartitem=page.locator('#shopping_cart_container > a > span');
         this.continueshoppingbutton=page.getByRole('button',{name:/Continue Shopping/});
     }
     async additem(){
         await this.Add.click();
         await this.Cartitem.click();
-    }
-
-    async checkcartitem(){
-       await expect(this.Checkcartitem.isVisible());
+        await expect(this.Checkcartitem).toBeVisible();
 
     }
+
+    // async checkcartitem(){
+    //    await this.Cartitem.click();
+    //    await expect(this.Checkcartitem).toBeVisible();
+
+    // }
     async continueshopping(){
         await this.AddNew.click();
         await this.Cartitem.click();

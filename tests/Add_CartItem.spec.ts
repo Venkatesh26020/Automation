@@ -7,10 +7,10 @@ test('Add Item', async ({ authenticatedPage }) => {
     await cart.additem();
 });
 
-test('CheckCartitem', async({authenticatedPage})=>{
-    const checkcart=new Cart(authenticatedPage);
-    await checkcart.checkcartitem();
-})
+// test('CheckCartitem', async({authenticatedPage})=>{
+//     const checkcart=new Cart(authenticatedPage);
+//     await checkcart.checkcartitem();
+// })
 
 test('continue shopping',async({authenticatedPage})=>{
     const continueshop=new Cart(authenticatedPage);
